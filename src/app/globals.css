@@ -1,108 +1,219 @@
-.animate-loading-dot:nth-child(1) {
-	animation: loading-dot 1s ease-in-out infinite;
-}
-
-.animate-loading-dot:nth-child(2) {
-	animation: loading-dot 1s ease-in-out 0.2s infinite;
-}
-
-.animate-loading-dot:nth-child(3) {
-	animation: loading-dot 1s ease-in-out 0.4s infinite;
-}
-
-@keyframes loading-dot {
-	0% {
-		opacity: 0.2;
-		transform: scale(1);
-	}
-	20% {
-		opacity: 1;
-		transform: scale(1.2);
-	}
-	100% {
-		opacity: 0.2;
-		transform: scale(1);
-	}
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	:root {
-		--background: 0 0% 100%;
-		--foreground: 222.2 47.4% 11.2%;
+.animate-loading-dot:nth-child(1) {
+  animation: loading-dot 1s ease-in-out infinite;
+}
 
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
+.animate-loading-dot:nth-child(2) {
+  animation: loading-dot 1s ease-in-out 0.2s infinite;
+}
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 47.4% 11.2%;
+.animate-loading-dot:nth-child(3) {
+  animation: loading-dot 1s ease-in-out 0.4s infinite;
+}
 
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 47.4% 11.2%;
-
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
-
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-
-		--destructive: 0 100% 50%;
-		--destructive-foreground: 210 40% 98%;
-
-		--ring: 215 20.2% 65.1%;
-
-		--radius: 0.5rem;
-	}
-
-	.dark {
-		--background: 224 71% 4%;
-		--foreground: 213 31% 91%;
-
-		--muted: 223 47% 11%;
-		--muted-foreground: 215.4 16.3% 56.9%;
-
-		--popover: 224 71% 4%;
-		--popover-foreground: 215 20.2% 65.1%;
-
-		--card: 224 71% 4%;
-		--card-foreground: 213 31% 91%;
-
-		--border: 216 34% 17%;
-		--input: 216 34% 17%;
-
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 1.2%;
-
-		--secondary: 222.2 47.4% 11.2%;
-		--secondary-foreground: 210 40% 98%;
-
-		--accent: 216 34% 17%;
-		--accent-foreground: 210 40% 98%;
-
-		--destructive: 0 63% 31%;
-		--destructive-foreground: 210 40% 98%;
-
-		--ring: 216 34% 17%;
-
-		--radius: 0.5rem;
-	}
+@keyframes loading-dot {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
-	body {
-		@apply bg-background text-foreground;
-		font-feature-settings: "rlig" 1, "calt" 1;
-	}
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.animation-hero-bounce {
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: hero-bounce;
+}
+
+@keyframes hero-bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  height: 14px !important;
+  width: 14px !important;
+  display: inline-block !important;
+  background-color: #fff !important;
+
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet::after {
+  content: "";
+  border: 1px solid #d4d4d4;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  padding: 8px;
+  transform: translate(-50%, -12%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translate(-50%, -12%);
+  -moz-transform: translate(-50%, -12%);
+  -ms-transform: translate(-50%, -12%);
+  -o-transform: translate(-50%, -12%);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #43d477 !important;
+}
+
+.home-video-play-button:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.4;
+  z-index: -1;
+  border-radius: 50%;
+  animation: pluse 2s ease-out infinite;
+  -webkit-animation: pluse 2s ease-out infinite;
+}
+.home-video-play-button:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.4;
+  z-index: -1;
+  border-radius: 50%;
+  animation: pluse 2s ease-out 1s infinite;
+  -webkit-animation: pluse 2s ease-out 1s infinite;
+}
+
+@keyframes pluse {
+  0% {
+    z-index: 1;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    opacity: 0.4;
+  }
+  50% {
+    z-index: 1;
+    transform: scale(1.6);
+    -webkit-transform: scale(1.6);
+    -moz-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    -o-transform: scale(1.6);
+    opacity: 0.1;
+  }
+  100% {
+    z-index: 1;
+    transform: scale(1.9);
+    -webkit-transform: scale(1.9);
+    -moz-transform: scale(1.9);
+    -ms-transform: scale(1.9);
+    -o-transform: scale(1.9);
+    opacity: 0;
+  }
 }

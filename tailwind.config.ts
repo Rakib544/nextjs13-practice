@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./src/pages/**/*.{ts,tsx}",
     "./src/components/**/*.{ts,tsx}",
+    "./src/sections/**/*.{ts,tsx}",
     "./src/app/**/*.{ts,tsx}",
   ],
   theme: {
@@ -11,6 +12,8 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
+        lg: "1024px",
+        xl: "1200px",
         "2xl": "1400px",
       },
     },

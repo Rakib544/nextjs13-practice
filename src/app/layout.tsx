@@ -69,12 +69,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100 dark:bg-gradient-to-br dark:from-gray-800 dark:via-gray-900 dark:to-slate-900" />
+          <div className="w-full" />
           {/* @ts-expect-error Async Server Component */}
           <Header />
-          <main className="z-10 flex h-[calc(100vh-80px)] w-full flex-col items-center justify-center py-24">
-            {children}
-          </main>
+          <main>{children}</main>
           <Footer />
           <Toaster />
         </ThemeProvider>
