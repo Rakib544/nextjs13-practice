@@ -4,7 +4,7 @@ import SearchBox from "../search-box";
 
 export default function Footer() {
   return (
-    <footer className="mt-60 bg-slate-800">
+    <footer className="mt-60 bg-[#0a2540]">
       <div className="-translate-y-28">
         <div className="container">
           <div

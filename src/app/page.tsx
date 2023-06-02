@@ -1,14 +1,19 @@
+import { getServerSession } from "next-auth";
 import BannerImage from "~/components/banner-img";
 import SearchBox from "~/components/search-box";
 import { courseData } from "~/data/course-data";
-import BecomeAnInstructor from "~/sections/become-an-instructor";
-import Courses from "~/sections/courses";
-import FindTheBestInstructor from "~/sections/find-the-best-instructor";
-import HaveAnyQuestion from "~/sections/have-any-question";
-import Instructor from "~/sections/instructors";
-import Testimonials from "~/sections/testimonials";
+import { authOptions } from "~/lib/auth";
+import BecomeAnInstructor from "~/sections/home/become-an-instructor";
+import Courses from "~/sections/home/courses";
+import FindTheBestInstructor from "~/sections/home/find-the-best-instructor";
+import HaveAnyQuestion from "~/sections/home/have-any-question";
+import Instructor from "~/sections/home/instructors";
+import Testimonials from "~/sections/home/testimonials";
 
 export default async function Home() {
+  const data = await getServerSession(authOptions);
+  console.log({ data });
+
   return (
     <div className="container z-10">
       <div

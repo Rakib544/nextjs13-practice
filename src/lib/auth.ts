@@ -1,70 +1,48 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type NextAuthOptions } from "next-auth";
-import GithubProvider from "next-auth/providers/github";
-import prisma from "~/lib/prisma";
+import CredentialProvider from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
-  providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
-    }),
-  ],
   session: {
     strategy: "jwt",
   },
+  providers: [
+    CredentialProvider({
+      type: "credentials",
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      authorize(credentials) {
+        const { email, password } = credentials as {
+          email: string;
+          password: string;
+        };
+        // find user from db
+        console.log(email, password);
+        if (email !== "rakib@gmail.com" || password !== "rakib123") {
+          return null;
+        }
+
+        return {
+          id: 1,
+          name: "Rakib",
+          email: "rakib@gmail.com",
+          role: "ADMIN",
+          accessToken: "kjfnbjdfbjkdnfjkdbkjfnkdjndfndkjn",
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any;
+      },
+    }),
+  ],
+  secret: "rakibdfbdjfbnd",
   callbacks: {
-    async session({ token, session }) {
-      if (token) {
-        session.user.id = token.id;
-        session.user.name = token.name;
-        session.user.email = token.email;
-        session.user.image = token.picture;
-      }
-
-      return session;
-    },
     async jwt({ token, user }) {
-      const dbUser = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
-      });
-
-      if (!dbUser) {
-        if (user) {
-          token.id = user.id;
-        }
-        return token;
-      }
-
-      return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        picture: dbUser.image,
-      };
+      return { ...token, ...user };
     },
-  },
-  events: {
-    async signIn({ user, isNewUser }) {
-      if (user && isNewUser) {
-        try {
-          await fetch(process.env.NEXTAUTH_URL + "/api/send-mail", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: user.email,
-              name: user.name,
-            }),
-          });
-        } catch (error) {
-          console.error(error);
-        }
-      }
+    async session({ token, session }) {
+      session.user = token;
+      return session;
     },
   },
 };
