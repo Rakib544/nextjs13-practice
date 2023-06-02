@@ -3,7 +3,8 @@ import { type ReactElement } from "react";
 import { Resend } from "resend";
 import EmailTemplate from "~/components/email-template";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("dkfnbkjdfnbkdnfkdjnk");
 
 interface Data {
   to: string;
