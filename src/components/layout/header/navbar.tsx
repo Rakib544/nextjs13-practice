@@ -1,12 +1,13 @@
 "use client";
 
 import { type Session } from "next-auth";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "~/components/ui/button";
 import useScroll from "~/lib/hooks/use-scroll";
 import { cn } from "~/lib/utils";
 import ThemeToggle from "../../shared/theme-toggle";
-import SignInModal from "../signin-modal";
 import UserNav from "../user-nav";
 
 export default function Navbar({ session }: { session: Session | null }) {
@@ -35,7 +36,11 @@ export default function Navbar({ session }: { session: Session | null }) {
           </Link>
           <div className=" flex items-center gap-x-2">
             <ThemeToggle />
-            {session ? <UserNav session={session} /> : <SignInModal />}
+            {session ? (
+              <UserNav session={session} />
+            ) : (
+              <Button onClick={() => signIn()}>Sign In</Button>
+            )}
           </div>
         </div>
       </div>
