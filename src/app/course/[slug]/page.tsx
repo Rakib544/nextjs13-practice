@@ -15,9 +15,9 @@ export default function CourseDetails() {
   return (
     <div className="z-10 my-20">
       <div className="bg-[#0a2540]">
-        <div className="container py-24">
+        <div className="container py-20 lg:py-24">
           <div className="max-w-xl">
-            <h1 className="text-3xl font-bold text-white">
+            <h1 className="text-2xl font-bold text-white lg:text-3xl">
               The Complete Python Bootcamp From Zero to Hero in Python
             </h1>
             <p className="mt-3 text-slate-100">
@@ -34,7 +34,7 @@ export default function CourseDetails() {
             </div>
             <p className="text-sm font-medium text-white">
               Created By -{" "}
-              <Link href="" className="underline">
+              <Link href="/instructor/rakib" className="underline">
                 Rakib
               </Link>
             </p>
@@ -46,7 +46,7 @@ export default function CourseDetails() {
       </div>
       <div className="container my-12">
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-12 lg:col-span-8">
+          <div className="order-2 col-span-12 lg:order-1 lg:col-span-8">
             <div className="rounded border bg-[#F7FAFD] p-4">
               <h3 className="font-bold">What you will learn</h3>
               <ul className="mt-4 flex list-inside list-disc flex-col gap-1 text-sm text-slate-500">
@@ -121,7 +121,12 @@ export default function CourseDetails() {
               </p>
             </div>
             <div className="my-12">
-              <h3 className="mb-4 font-bold">More Courses by Rakib</h3>
+              <h3 className="mb-4 text-xl font-bold lg:text-2xl">
+                More Courses by{" "}
+                <Link href="/instructor/1" className="hover:underline">
+                  Rakib
+                </Link>
+              </h3>
               <div className="grid grid-cols-12 gap-4">
                 {courseData.map((course) => (
                   <div
@@ -134,8 +139,8 @@ export default function CourseDetails() {
               </div>
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-4">
-            <div className="-translate-y-96 rounded bg-white shadow-lg">
+          <div className="order-1 col-span-12 lg:order-2 lg:col-span-4">
+            <div className=" -translate-y-24 rounded bg-white shadow-lg lg:-translate-y-96 ">
               <div>
                 <Image
                   className="rounded"

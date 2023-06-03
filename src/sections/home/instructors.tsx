@@ -13,12 +13,12 @@ function Instructor() {
     <div className="my-20">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="mb-1 text-2xl font-bold">Instructors</h2>
+          <h2 className="mb-1 text-xl font-bold lg:text-2xl">Instructors</h2>
           <p className="text-slate-600">
-            #Learn from the experienced & skillful instructors
+            Learn from the experienced & skillful instructors
           </p>
         </div>
-        <div>
+        <div className="shrink-0">
           <Button asChild variant="outline">
             <Link href="">View More</Link>
           </Button>

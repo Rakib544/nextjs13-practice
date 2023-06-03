@@ -7,7 +7,11 @@ import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import useScroll from "~/lib/hooks/use-scroll";
 import { cn } from "~/lib/utils";
-import ThemeToggle from "../../shared/theme-toggle";
+// import ThemeToggle from "../../shared/theme-toggle";
+import { ShoppingCart } from "lucide-react";
+import { NavNavigationMenu } from "~/components/navigation-menu";
+import { SearchModal } from "~/components/search-modal";
+import SideDrawer from "~/components/shared/drawer";
 import UserNav from "../user-nav";
 
 export default function Navbar({ session }: { session: Session | null }) {
@@ -17,30 +21,55 @@ export default function Navbar({ session }: { session: Session | null }) {
       className={cn(
         "fixed top-0 w-full",
         scrolled
-          ? "h-16 border-b border-gray-200 bg-transparent backdrop-blur-xl transition-all"
+          ? "h-16 border-b border-gray-200 bg-white transition-all"
           : "h-20 bg-white/0",
         "z-30"
       )}
     >
       <div className="container h-full">
         <div className="flex h-full  items-center justify-between">
-          <Link href="/" className="flex items-center text-2xl font-bold">
-            <Image
-              src="/chad-next.png"
-              alt="ChadNext logo"
-              width="30"
-              height="30"
-              className="mr-2 rounded-sm object-contain"
-            />
-            <p>ChadNext</p>
-          </Link>
+          <div className="flex items-center">
+            <Link href="/">
+              <Image
+                src="/usthtaze.png"
+                alt="Usthtaze logo"
+                width="160"
+                height="190"
+                className="mr-2 rounded-sm object-contain"
+              />
+            </Link>
+          </div>
+          <div className="hidden lg:block">
+            <NavNavigationMenu />
+          </div>
           <div className=" flex items-center gap-x-2">
-            <ThemeToggle />
-            {session ? (
-              <UserNav session={session} />
-            ) : (
-              <Button onClick={() => signIn()}>Sign In</Button>
-            )}
+            {/* <ThemeToggle /> */}
+            <div className="flex">
+              <SearchModal />
+              <Button variant="link" className="rounded-full px-2">
+                <Link href="/cart">
+                  <ShoppingCart className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="hidden items-center gap-x-2 lg:flex ">
+              {session ? (
+                <UserNav session={session} />
+              ) : (
+                <>
+                  <Button onClick={() => signIn()} variant="outline">
+                    Sign In
+                  </Button>
+                  <Button asChild>
+                    <Link href="/auth/singup">Sign up</Link>
+                  </Button>
+                </>
+              )}
+            </div>
+            <div className="block lg:hidden ">
+              <SideDrawer />
+            </div>
           </div>
         </div>
       </div>

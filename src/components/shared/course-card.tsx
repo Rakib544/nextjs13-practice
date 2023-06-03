@@ -30,7 +30,7 @@ export default function CourseCard({ course }: CourseType) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Link href="/">
+        <Link href="/course/1">
           <Image
             src={course.thumbnail}
             alt={course.title}

@@ -21,23 +21,23 @@ export default function BecomeAnInstructor() {
                 <Link href="">Become and Instructor</Link>
               </Button>
             </div>
-            <div>
+            {/* <div>
               <Button asChild variant="outline">
                 <Link href="">Registration Packages</Link>
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="order-1 col-span-2 md:order-2 md:col-span-1">
           <div className="relative">
             <Image
               src="https://lms-course.netlify.app/static/media/become_instructor_banner.2888ca953ff4e54a8667.jpg"
-              width={400}
-              height={650}
+              width={320}
+              height={550}
               alt="become an instructor"
-              className="md:max-w-100 max-h-72 max-w-[500px] rounded-bl rounded-br-2xl rounded-tl-2xl rounded-tr md:max-h-[750px]"
+              className="md:max-w-100 max-h-72 w-full max-w-[500px] rounded-bl rounded-br-2xl rounded-tl-2xl rounded-tr md:max-h-[750px] lg:w-[400px]"
             />
-            <div className="animation-hero-bounce absolute -right-0 bottom-12 rounded  md:-right-4">
+            <div className="animation-hero-bounce absolute -right-0 bottom-12 rounded  md:right-16">
               <div className="flex items-center gap-2 rounded-lg bg-white px-2 py-3 shadow-sm">
                 <div className="h-14 w-14">
                   <svg

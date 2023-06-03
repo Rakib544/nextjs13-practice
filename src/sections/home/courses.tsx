@@ -28,10 +28,10 @@ function Courses({ title, subtitle, courses, viewMoreURL = "" }: CourseType) {
     <div className="my-12">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h2 className="mb-1 text-2xl font-bold">{title}</h2>
+          <h2 className="mb-1 text-xl font-bold lg:text-2xl">{title}</h2>
           <p className="text-slate-600">{subtitle}</p>
         </div>
-        <div>
+        <div className="shrink-0">
           <Button asChild variant="outline">
             <Link href={viewMoreURL}>View More</Link>
           </Button>

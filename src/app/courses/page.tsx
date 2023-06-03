@@ -1,5 +1,6 @@
 import CourseCard from "~/components/shared/course-card";
 import { Checkbox } from "~/components/ui/checkbox";
+import { Input } from "~/components/ui/input";
 import { courseData } from "~/data/course-data";
 
 export default function Courses() {
@@ -70,6 +71,11 @@ export default function Courses() {
           </div>
         </div>
         <div className="col-span-12 lg:col-span-9">
+          <Input
+            type="search"
+            className="mb-6 max-w-xl"
+            placeholder="Search courses here..."
+          />
           <div className="grid grid-cols-12 gap-4">
             {courseData.map((course) => (
               <div

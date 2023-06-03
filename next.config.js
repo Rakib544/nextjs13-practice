@@ -19,6 +19,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "lms.rocket-soft.org",
       },
+      {
+        protocol: "https",
+        hostname: "phero-web.nyc3.cdn.digitaloceanspaces.com",
+      },
     ],
   },
 };
