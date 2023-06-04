@@ -62,7 +62,7 @@ export default function Navbar({ session }: { session: Session | null }) {
                     Sign In
                   </Button>
                   <Button asChild>
-                    <Link href="/auth/singup">Sign up</Link>
+                    <Link href="/auth/signup">Sign up</Link>
                   </Button>
                 </>
               )}

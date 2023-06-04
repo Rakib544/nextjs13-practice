@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .animate-loading-dot:nth-child(1) {
   animation: loading-dot 1s ease-in-out infinite;
 }
@@ -96,6 +92,10 @@
     --radius: 0.5rem;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   * {

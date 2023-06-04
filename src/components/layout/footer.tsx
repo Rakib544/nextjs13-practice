@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container">
-        <div className="mt-14 flex items-center justify-between border-t pb-4 pt-4">
+        <div className="mt-14 flex flex-col items-center justify-between border-t pb-4 pt-4 lg:flex-row">
           <div>
             <Image
               src="https://lms-course.netlify.app/static/media/logo.5cb689a2ad3891b534c8.png"
@@ -199,15 +199,15 @@ export default function Footer() {
               className="h-auto w-44"
             />
           </div>
-          <div className="flex items-center gap-6 text-muted-foreground">
+          <div className="my-3 flex items-center gap-6 text-xs text-muted-foreground lg:text-base">
             <Link href="" className="hover:text-slate-800 hover:underline">
-              Terms and Conditions
+              Terms & Conditions
             </Link>
             <Link href="" className="hover:text-slate-800 hover:underline">
               Site Map
             </Link>
             <Link href="" className="hover:text-slate-800 hover:underline">
-              Privacy and Policy
+              Privacy & Policy
             </Link>
           </div>
         </div>

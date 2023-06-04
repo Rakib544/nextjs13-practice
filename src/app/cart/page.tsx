@@ -55,18 +55,23 @@ export default function ShoppingCart() {
                       <h3 className="text-xl font-bold lg:text-lg">
                         {course.title}
                       </h3>
-                      <p className="font-medium">By {course.instructor}</p>
-                      <div className="flex items-center gap-2 font-bold text-slate-700">
+                      <p className="mt-1 text-sm font-medium">
+                        By {course.instructor}
+                      </p>
+                      <div className="mt-2 flex items-center gap-2 font-bold">
                         <span>{course.ratings}</span>
                         <CustomRating value={course.ratings} />
                       </div>
-                      <div className="flex items-center gap-2 text-sm font-medium text-slate-700">
+
+                      <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
                         <span>{course.duration}</span>
                         <span>- {course.level}</span>
                       </div>
                     </div>
                     <div className="col-span-6 lg:col-span-2">
-                      <button className="text-red font-semibold">Remove</button>
+                      <Button variant="link" className="text-red-500">
+                        Remove
+                      </Button>
                     </div>
                     <div className="col-span-6 lg:col-span-2">
                       <p className="text-lg font-bold">${course.price}</p>
