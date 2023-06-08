@@ -3,6 +3,7 @@
 import { type ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import {
   DropdownMenu,
@@ -77,7 +78,7 @@ export const columns: ColumnDef<Course>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const payment = row.original;
+      const course = row.original;
 
       return (
         <DropdownMenu>
@@ -89,14 +90,15 @@ export const columns: ColumnDef<Course>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
+            <DropdownMenuItem>
+              <Link href={`/instructor/course/${course.id}/manage/goals`}>
+                Edit
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/course/${course.id}`}>View as public</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

@@ -23,6 +23,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "phero-web.nyc3.cdn.digitaloceanspaces.com",
       },
+      {
+        protocol: "https",
+        hostname: "s.udemycdn.com",
+      },
     ],
   },
 };
